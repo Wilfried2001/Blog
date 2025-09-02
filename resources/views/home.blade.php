@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout title="Home Page">
     @section('hero')
         <div class="w-full text-center py-32">
             <h1 class="text-2xl md:text-3xl font-bold text-center lg:text-5xl text-gray-700">
@@ -17,13 +17,11 @@
             <div class="w-full">
                 <div class="grid grid-cols-3 gap-10 w-full">
                     @foreach ($featuredPosts as $post)
-                        <div class="md:col-span-1 col-span-3">
-                            {{-- <img class="w-full rounded-xl" src="https://via.placeholder.com/640x480.png?text=TEST"
+                        {{-- <img class="w-full rounded-xl" src="https://via.placeholder.com/640x480.png?text=TEST"
                                 alt="test"> --}}
 
-                            {{-- {{ dd($post->image) }} --}}
-                            <x-posts.post-card :post="$post" />
-                        </div>
+                        {{-- {{ dd($post->image) }} --}}
+                        <x-posts.post-card :post="$post" class="md:col-span-1 col-span-3" />
                     @endforeach
 
                 </div>
@@ -38,9 +36,7 @@
         <div class="w-full mb-5">
             <div class="grid grid-cols-3 gap-10 w-full">
                 @foreach ($latestPosts as $post)
-                    <div class="md:col-span-1 col-span-3">
-                        <x-posts.post-card :post="$post" />
-                    </div>
+                    <x-posts.post-card :post="$post" class="md:col-span-1 col-span-3" />
                 @endforeach
 
             </div>
